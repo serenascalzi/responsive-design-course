@@ -1,0 +1,98 @@
+MOOC 1
+
+Plain Text Editors:
+
+TextWrangler (OSX) http://www.barebones.com/products/textwrangler/
+
+Notepad++ (PC) https://notepad-plus-plus.org/
+
+Sublime Text (OSX, Windows, Linux) http://www.sublimetext.com/
+
+Atom (OSX, Windows, Linux) https://atom.io
+
+
+World's First Web Page:
+
+http://info.cern.ch/hypertext/WWW/TheProject.html
+
+
+Bootstrap:
+
+http://getbootstrap.com/
+
+When prompted to in the following lecture, copy the bootstrap.css file from the CSS folder into your project directory.
+
+
+JavaScript:
+
+JavaScript is a complex language that would be impossible to teach entirely in a course such as this, but there are many additional resources that you can use to learn more.
+
+Online Book http://eloquentjavascript.net
+
+W3schools Tutorials http://www.w3schools.com/js/
+
+Mozilla Tutorials https://developer.mozilla.org/en-US/Learn/JavaScript
+
+There are many, many more resources out there and a web search should quickly throw up answers to most questions
+
+
+jQuery:
+
+In this course we will be using the library jQuery to manipulate HTML DOM. While it is possible to do this in plain JavaScript, jQuery makes it much easier.
+
+Main jQuery Site and Download https://jquery.com
+
+jQuery Documentation http://api.jquery.com
+
+W3schools Tutorials http://www.w3schools.com/jquery/
+
+jQuery Site Tutorials https://learn.jquery.com
+
+
+MOOC 2
+
+Accessibility:
+
+Web Accessibility Initiative	http://www.w3.org/WAI/
+
+
+Design:
+
+Edward Tufte	http://www.edwardtufte.com/tufte
+
+User Centred Design	http://www.w3.org/WAI/redesign/ucd
+
+No Volume	http://www.novolume.co.uk/blog/all-websites-look-the-same/
+
+
+Bootstrap:
+
+Get Started	http://getbootstrap.com/getting-started/
+
+Nav Bars	http://getbootstrap.com/components/#navbar
+
+Breadcrumbs	http://getbootstrap.com/components/#breadcrumbs
+
+Grids		http://getbootstrap.com/css/#grid
+
+Themes (Free)	https://bootswatch.com
+
+Themes (Com)	https://wrapbootstrap.com
+
+JavaScript:
+
+Reference	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+
+Handlebars	http://handlebarsjs.com
+
+Arrays		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+Meteor:
+
+Website		https://www.meteor.com/
+
+Install		https://www.meteor.com/install
+
+Template	https://www.meteor.com/tutorials/blaze/templates
+
+Packages	https://atmospherejs.com/

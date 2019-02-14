@@ -1,0 +1,16 @@
+/* CSS */
+
+.album_cover {
+	width: 25%;
+	border: 1px solid gray;
+	padding: 10px;
+}
+
+.photo_list {
+	width: 75%;
+	padding: 10px;
+}
+
+.single_photo {
+	width: 50%;
+}

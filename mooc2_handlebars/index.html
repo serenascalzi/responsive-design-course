@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+	<title></title>
+
+	<!-- include our libraries and css files -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/handlebars-v4.0.11.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="AnimalsData.js"></script> <!-- replace this with new array -->
+	<link href="css/bootstrap.css" rel="stylesheet"> <!-- pulls in the main bootstrap content we need -->
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+
+	<body>
+
+		<div id="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div id="content_left">
+					<!-- animal list is rendered here -->
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div id="content_right">
+					<!-- animal detail is rendered here -->
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- this is our template put your code in here...-->
+		<script id="category-template" type="text/x-handlebars-template">
+			<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+				{{#each animals}}
+				<!-- note that we set the class to js-animal name. This lets us assign a click event to this li -->
+					<li><a href="#" class="js-animal-name" data-id="{{name}}">{{name}}</a></li>
+				{{/each}}
+			</ul>
+		</script>
+		
+		<script id="animal-detail-template" type="text/x-handlebars-template">
+			<h2>{{name}}</h2>
+			<img src="{{image1}}" />
+			<img src="{{image2}}" />
+		</script>
+		
+		<!-- javascript code to fill the template -->
+		<script type="text/javascript">
+		
+		// grab our template code from the DOM
+		var source = $("#category-template").html();
+		
+		// compile the template so we can use it
+		var template = Handlebars.compile(source);
+		
+		// generate HTML from the data
+		var html = template(animals_data);
+		
+		// add the HTML to the content div
+		$('#content_left').html(html);
+		
+		// this event listener is triggered when the user clicks on an animal name
+		$('.js-animal-name').on('click', function(e){
+			var animal_name = $(e.target).data('id'); // pull the data-id attribute, which contains the name
+			console.log('rendering detail page for '+animal_name);
+			for (var i=0;i<animals_data.animals.length;i++){ // look for the animal in the array of animals
+				var an_animal = animals_data.animals[i];
+				if (an_animal.name == animal_name){ // found it!
+					break;
+				}
+			}
+		
+		// load the html content of the animal-detail-template into a variable called source - don't forget the #!
+		var source = $("#animal-detail-template").html();
+		
+		// compile the contents of that variable using Handlebars and store it into
+		var template = Handlebars.compile(source);
+		
+		// call the template function, passing it the 'an_animal' variable to render the animal data with 
+		// the template and store the results in a variable.
+		var html = template(an_animal);
+		
+		// finally, replace the contents of the div with id #content_right 
+		// with the results of your template render
+		$('#content_right').html(html);
+		
+		});
+		</script>
+
+	</body>
+
+</html>

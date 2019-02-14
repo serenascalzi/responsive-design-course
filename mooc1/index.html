@@ -1,0 +1,173 @@
+<html>
+	<head>
+		<title>
+			Serena Scalzi
+		</title>
+		<!-- imports Bootstrap, CSS, and jQuery -->
+		<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<script src="jquery-3.2.1.min.js"></script>
+	</head>
+	<body>
+		<!-- creates layout using responsive Bootstrap grid -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 thin_border">
+					<h1>
+						Heading 1&ndash;Logo
+					</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 thin_border align">
+					<a href="#">
+						Navbar Link 1
+					</a>
+				</div>
+				<div class="col-md-3 thin_border align">
+					<a href="#">
+						Navbar Link 2
+					</a>
+				</div>
+				<div class="col-md-3 thin_border align">
+					<a href="#">
+						Navbar Link 3
+					</a>
+				</div>
+				<div class="col-md-3 thin_border align">
+					<a href="#">
+						Navbar Link 4
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 thin_border">
+					<!-- creates pop up dialog -->
+					<h3 id="title" onclick="alert('Click to Create Pop Up Dialog');">
+						Pop Up
+					</h3>
+					<!-- writes to console -->
+					<h3 id="title2" onclick="console.log('Click to Write to Console');">
+						Console
+					</h3>
+					<!-- creates pop up dialog using more complex script -->
+					<h3 id="title3" onclick="sayHello();">Hello</h3>					
+					<script type="text/javascript">
+						function sayHello() {
+							alert('Hello');
+						};
+					</script>
+					<!-- changes the HTML content -->
+					<h3 id="title4" onclick="$('#title4').html('Bye');">
+						Hi
+					</h3>
+					<!-- changes the HTML content back and forth with an anonymous function -->
+					<h3 id="title5" onclick="sayCiao();">Ciao</h1>
+					<script type="text/javascript">
+						function sayCiao() {
+							console.log("Ciao is Hello in Italian");
+							$("#title5").html("Hello");
+							$("#title5").click(function () {
+								$("#title5").html("Ciao");
+								$("#title5").off("click");
+							});
+						};
+					</script>
+				</div>
+				<div class="col-md-4 thin_border">
+					<p>
+						Paragraph
+					</p>
+					<ul>
+						<li>List Item 1</li>
+						<li>List Item 2</li>
+						<li>List Item 3</li>
+					</ul>
+					<ol>
+						<li>List Item</li>
+						<li>List Item</li>
+						<li>List Item</li>
+					</ol>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 thin_border align">
+					<h2>
+						Heading 2&ndash;Image Gallery
+					</h2>
+					<button id="backward">&lt; &lt;</button>
+					<button id="forward">&gt; &gt;</button>
+					<img id="bigImage" class="uncropped" src="01.jpg" alt="Image 1" />
+				</div>
+			</div>			
+			<div class="row">
+				<div class="col-md-3 thin_border align">
+					<img id="image1" class="cropped" src="01.jpg" alt="Image 1" />
+				</div>
+				<div class="col-md-3 thin_border align">
+					<img id="image2" class="cropped" src="02.jpg" alt="Image 2" />
+				</div>
+				<div class="col-md-3 thin_border align">
+					<img id="image3" class="cropped" src="03.jpg" alt="Image 3" />
+				</div>
+				<div class="col-md-3 thin_border align">
+					<img id="image4" class="cropped" src="04.jpg" alt="Image 4" />
+				</div>
+			</div>
+			<script>
+			<!-- sets slideshow to play -->
+				var paused = false;
+
+			<!-- displays image when image is clicked -->			
+				$(".cropped").click(function(){
+					$("#bigImage").attr('src', 
+						$(this).attr('src'));
+				});
+
+			<!-- sets counter to 1 -->
+				var counter = 1;
+
+			<!-- displays image when image is clicked -->
+				$("#image"+counter).click();
+
+			<!-- displays previous image when backward button is clicked -->
+				$("#backward").click(function (){
+					counter = counter - 1;
+					if (counter < 1) {
+						counter = 4;
+					}
+					$("#image"+counter).click();
+				});
+
+			<!-- displays next image when forward button is clicked -->
+				$("#forward").click(function (){
+					counter = counter + 1;
+					if (counter > 4) {
+						counter = 1;
+					}
+					$("#image"+counter).click();
+				});
+
+			<!-- toggles pausing when image is clicked -->
+				$("#bigImage").click(function (){
+					paused = !paused;
+				});
+
+			<!-- displays next image every 5 seconds -->
+				setInterval(function (){
+					if(!paused){
+						$("#forward").click();
+					};
+				}, 5000);
+		</script>
+		
+			<div class="row">
+				<div class="col-md-12 thin_border align">
+					<h3>
+						Heading 3&ndash;Footer
+					</h3>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
